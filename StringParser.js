@@ -1,4 +1,4 @@
-﻿doit = function () {
+﻿main = function () {
     var PS = new ParseString({ a: 'awef', b: ['awefeea'], c: ['233rw'] }, true);
     var selector = 'e';
     var count = PS.charCount(selector);
