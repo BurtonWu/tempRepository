@@ -20,9 +20,8 @@ function ParseString(parseElement, caseSensitive) {
     this.caseSensitive = typeof caseSensitive === undefined ? false : true;
     this.parseElement = typeof parseElement === undefined ? "" : parseElement;
 
-    //Recursion Function
+    //RECURSION FUNCTION
     this.stringParser = function (parseElement) {
-
         //STRING
         if ((typeof parseElement).localeCompare("string") == 0) {
             if (this.caseSensitive && parseElement.length > 0) {
@@ -37,7 +36,7 @@ function ParseString(parseElement, caseSensitive) {
             if (Object.prototype.toString.call(parseElement) === '[object Array]') {
                 var i;
                 for (i = 0; i < parseElement.length; i++) {
-                    //Recursion
+                    //Recursion**
                     parseString += this.stringParser(parseElement[i]);
                 }
             }
@@ -45,7 +44,7 @@ function ParseString(parseElement, caseSensitive) {
             else {
                 for (var property in parseElement) {
                     if (parseElement.hasOwnProperty(property)) {
-                        //Recursion
+                        //Recursion**
                         parseString += this.stringParser(parseElement[property]);
                     }
                 }
@@ -54,6 +53,7 @@ function ParseString(parseElement, caseSensitive) {
         }
         else {
             //OTHER *DATATYPE
+            //Recursion**
             return this.stringParser(parseElement.toString());
         }
     }
