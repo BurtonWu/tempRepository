@@ -1,10 +1,16 @@
 ﻿main = function () {
+    //SAMPLE INPUT TO CONSTRUCTOR
     var PS = new ParseString({ a: 'awef', b: ['awefeea'], c: ['233rw'] }, true);
+
+    //SAMPLE CHAR TO SEARCH FOR
     var selector = 'e';
+
+    //CALLING PROTOTYPES
     var count = PS.charCount(selector);
     var most = PS.mostOccurChar();
     var least = PS.leastOccurChar();
 
+    //PRINTING TO CONSOLE ON BROWSER
     console.log('Most Occured Char: ' + most);
     console.log('Least Occured Char: ' + least);
     console.log('There were ' + count +' instances for char: ' + selector);
