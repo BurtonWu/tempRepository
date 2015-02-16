@@ -1,0 +1,15 @@
+﻿
+<!--This is where the angular app starts, view /assets/app/mainApp.js to see how-->
+<div ng-app="mainApp">
+    <div ng-view></div>
+</div>
+
+<!--Non default Fliles that I've included here for convience, they should be bundled-->
+@Scripts.Render("~/Scripts/angular.min.js")
+@Scripts.Render("~/Scripts/angular-route.min.js")
+@Scripts.Render("~/assets/app/controllers/controllers.js")
+@Scripts.Render("~/assets/app/directives/directives.js")
+@Scripts.Render("~/assets/app/constants/constants.js")
+@Scripts.Render("~/assets/app/services/employeeServices.js")
+@Scripts.Render("~/assets/app/filters/employeeFilters.js")
+@Scripts.Render("~/assets/app/mainApp.js")

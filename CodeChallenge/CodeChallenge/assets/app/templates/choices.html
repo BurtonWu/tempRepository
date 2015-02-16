@@ -1,0 +1,28 @@
+
+
+<select ng-model="selectedVal.selectedGender" ng-options="gender.optName for gender in genderOption">
+</select>
+
+<select ng-model="selectedVal.selectedPosition" ng-options="position.optName for position in positionOption">
+</select>
+
+<table>
+    <thead>
+        <tr>
+            <th>Sex</th>
+            <th>Name</th>
+            <th>Position</th>
+        </tr>
+    </thead>
+    <!--
+        Filtering occurs here, check out /assets/app/filters/*  for genderFilter and positionFilter
+        Note*: selectedVal is passed in, this scope variable is defined in the controller, /assets/app/controlers/controllers.js
+    -->
+    <tbody ng-repeat="employee in employees | genderFilter: selectedVal.selectedGender | positionFilter: selectedVal.selectedPosition">
+        <tr>
+            <td>{{employee.gender_name}}</td>
+            <td>{{employee.name}}</td>
+            <td>{{employee.position_name}}</td>
+        </tr>
+    </tbody>
+</table>
